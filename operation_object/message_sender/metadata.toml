@@ -1,0 +1,16 @@
+[workflow]
+stages = [ "position_capture", "execution",]
+
+[configuration]
+default_delay = 1.0
+position_capture_method = "User mouse click"
+
+[stage.position_capture]
+requirements = [ "x_position", "y_position",]
+
+[stage.execution]
+requirements = [ "x_position", "y_position", "delay",]
+
+[positions.icon_position]
+x = 529.91796875
+y = 458.7265625

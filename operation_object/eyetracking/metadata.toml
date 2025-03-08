@@ -1,0 +1,45 @@
+[workflow]
+stages = [ "position_capture", "open_project", "calibration", "eyetracking_record", "data_analysis"]
+
+[configuration]
+default_delay = 1.0
+position_capture_method = "User mouse click"
+
+[positions]
+icon_position = { x = -1, y = -1 }
+
+open_project_position = { x = -1, y = -1 }
+
+test_record_position = { x = -1, y = -1 }
+
+save_button_position = { x = -1, y = -1 }
+
+test_select_position = { x = -1, y = -1 }
+
+calibrate_position = { x = -1, y = -1 }
+
+calibrate_confirm_position = { x = -1, y = -1 }
+
+start_record_position = { x = -1, y = -1 }
+
+record_confirm_position = { x = -1, y = -1 }
+
+data_analysis_position = { x = -1, y = -1 }
+
+interest_area_position = { x = -1, y = -1 }
+
+stimulus_material0_position = { x = -1, y = -1 }
+
+square_area_create_position = { x = -1, y = -1 }
+
+area0_delete_position = { x = -1, y = -1 }
+
+index_area_position = { x = -1, y = -1 }
+
+aoi_based_output_section_position = { x = -1, y = -1 }
+
+aoi_based_output_export_position = { x = -1, y = -1 }
+
+aoi_based_output_export_confirm_position = { x = -1, y = -1 }
+
+data_visualization_position = { x = -1, y = -1 }
