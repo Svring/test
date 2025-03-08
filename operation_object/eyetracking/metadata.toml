@@ -1,12 +1,12 @@
 [workflow]
-stages = [ "position_capture", "open_project", "calibration", "eyetracking_record", "data_analysis"]
+stages = [ "position_calibration", "open_eyetracker", "open_project", "calibration", "eyetracking_record", "data_analysis"]
 
 [configuration]
 default_delay = 1.0
 position_capture_method = "User mouse click"
 
 [positions]
-icon_position = { x = -1, y = -1 }
+open_eyetracker_position = { x = -1, y = -1 }
 
 open_project_position = { x = -1, y = -1 }
 

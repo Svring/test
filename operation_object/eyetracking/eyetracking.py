@@ -81,14 +81,24 @@ class EyeTracking:
             print(f"Error during position capture: {str(e)}")
             return False
 
-    def position_capture(self):
-        """Stage 1: Capture all necessary positions"""
+    def position_calibration(self):
+        """Stage 0: Capture all necessary positions"""
         try:
             # TODO: Implement position capture workflow
             print("Position capture stage - Not implemented")
             return True
         except Exception as e:
             print(f"Error during position capture stage: {str(e)}")
+            return False
+        
+    def open_eyetracker(self):
+        """Stage 1: Open the eyetracker"""
+        try:
+            # TODO: Implement eyetracker opening workflow
+            print("Open eyetracker stage - Not implemented")
+            return True
+        except Exception as e:  
+            print(f"Error during eyetracker opening stage: {str(e)}")
             return False
 
     def open_project(self):
@@ -136,7 +146,8 @@ class EyeTracking:
         try:
             # Execute each stage in sequence
             stages = [
-                self.position_capture,
+                self.position_calibration,
+                self.open_eyetracker,
                 self.open_project,
                 self.calibration,
                 self.eyetracking_record,
