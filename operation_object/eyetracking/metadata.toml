@@ -1,45 +1,82 @@
 [workflow]
-stages = [ "position_calibration", "open_eyetracker", "open_project", "calibration", "eyetracking_record", "data_analysis"]
+stages = [ "position_calibration", "open_eyetracker", "open_project", "calibration", "eyetracking_record", "data_analysis",]
 
 [configuration]
 default_delay = 1.0
 position_capture_method = "User mouse click"
 
-[positions]
-open_eyetracker_position = { x = -1, y = -1 }
+[positions.open_eyetracker_position]
+x = 129.11328125
+y = 88.94140625
 
-open_project_position = { x = -1, y = -1 }
+[positions.open_project_position]
+x = 424.3046875
+y = 86.796875
 
-test_record_position = { x = -1, y = -1 }
+[positions.test_record_position]
+x = 562.328125
+y = 87.8984375
 
-save_button_position = { x = -1, y = -1 }
+[positions.save_button_position]
+x = 825.3515625
+y = 553.34375
 
-test_select_position = { x = -1, y = -1 }
+[positions.test_select_position]
+x = 364.7109375
+y = 408.6171875
 
-calibrate_position = { x = -1, y = -1 }
+[positions.calibrate_position]
+x = 172.20703125
+y = 169.3515625
 
-calibrate_confirm_position = { x = -1, y = -1 }
+[positions.calibrate_confirm_position]
+x = 604.54296875
+y = 484.1328125
 
-start_record_position = { x = -1, y = -1 }
+[positions.start_record_position]
+x = 1388.59765625
+y = 921.50390625
 
-record_confirm_position = { x = -1, y = -1 }
+[positions.record_confirm_position]
+x = 728.015625
+y = 308.33203125
 
-data_analysis_position = { x = -1, y = -1 }
+[positions.data_analysis_position]
+x = 700.9296875
+y = 84.4296875
 
-interest_area_position = { x = -1, y = -1 }
+[positions.interest_area_position]
+x = 704.74609375
+y = 132.875
 
-stimulus_material0_position = { x = -1, y = -1 }
+[positions.stimulus_material0_position]
+x = 1431.265625
+y = 576.77734375
 
-square_area_create_position = { x = -1, y = -1 }
+[positions.square_area_create_position]
+x = 1346.7734375
+y = 569.625
 
-area0_delete_position = { x = -1, y = -1 }
+[positions.area0_delete_position]
+x = 1426.546875
+y = 575.09375
 
-index_area_position = { x = -1, y = -1 }
+[positions.index_area_position]
+x = 709.28515625
+y = 173.53515625
 
-aoi_based_output_section_position = { x = -1, y = -1 }
+[positions.aoi_based_output_section_position]
+x = 1281.03125
+y = 414.5546875
 
-aoi_based_output_export_position = { x = -1, y = -1 }
+[positions.aoi_based_output_export_position]
+x = 52.5390625
+y = 330.53125
 
-aoi_based_output_export_confirm_position = { x = -1, y = -1 }
+[positions.aoi_based_output_export_confirm_position]
+x = 1308.6640625
+y = 603.71875
 
-data_visualization_position = { x = -1, y = -1 }
+[positions.data_visualization_position]
+x = 709.625
+y = 209.671875

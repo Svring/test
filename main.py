@@ -1,5 +1,6 @@
 from pynput import mouse
 from operation_object.message_sender.message_sender import MessageSender
+from operation_object.eyetracking.eyetracking import EyeTracking
 
 def get_mouse_position():
     """Wait for user to click to capture position"""
@@ -39,6 +40,21 @@ def get_message_sender_action():
     print("\nMessage Sender Options:")
     print("1. Start execution")
     print("2. Reset position")
+    while True:
+        choice = input("Enter your choice (1 or 2): ").strip()
+        if choice in ['1', '2']:
+            return choice
+        print("Invalid choice. Please enter 1 or 2.")
+
+def get_eye_tracking_action(all_positions_set):
+    """Get user's choice for eye tracking actions"""
+    print("\nEye Tracking Options:")
+    if all_positions_set:
+        print("1. Start execution")
+        print("2. Reset all positions")
+    else:
+        print("1. Calibrate all positions")
+        print("2. Reset all positions")
     while True:
         choice = input("Enter your choice (1 or 2): ").strip()
         if choice in ['1', '2']:
@@ -88,8 +104,44 @@ def run_message_sender():
 def run_eye_tracking():
     """Execute the eye tracking procedure"""
     try:
-        print("Eye tracking automation is not implemented yet.")
-        # TODO: Implement eye tracking automation
+        print("Initializing EyeTracking...")
+        tracker = EyeTracking()
+
+        # Check if all positions are set
+        all_positions_set = True
+        for pos_name, pos_value in tracker.positions.items():
+            if pos_value["x"] == -1 or pos_value["y"] == -1:
+                all_positions_set = False
+                break
+
+        # Get user's choice for eye tracking
+        choice = get_eye_tracking_action(all_positions_set)
+        
+        if choice == '2':
+            # Reset all positions
+            if tracker.reset_positions():
+                print("All positions have been reset.")
+                print("Please run the calibration option to set new positions.")
+            else:
+                print("Failed to reset positions")
+            return
+
+        # If positions aren't set or user chose to calibrate
+        if not all_positions_set or (choice == '1' and not all_positions_set):
+            print("\nStarting position calibration...")
+            if not tracker.position_calibration():
+                print("Position calibration failed")
+                return
+            print("Position calibration completed. Please run execute option to start the workflow.")
+            return
+        
+        # Execute workflow if all positions are set and user chose to execute
+        if all_positions_set and choice == '1':
+            print("\nStarting workflow execution...")
+            if tracker.execute():
+                print("Workflow completed successfully!")
+            else:
+                print("Workflow failed.")
     except Exception as e:
         print(f"Error in eye tracking procedure: {str(e)}")
 
