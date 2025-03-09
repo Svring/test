@@ -85,6 +85,7 @@ class MessageSender:
             # Step 1: Move to position and double click
             doubleClick(x=self.position["x"], y=self.position["y"])
             time.sleep(self.delay)
+            time.sleep(2)
 
             # Step 2: Input '1' for random data selection
             write('1\n')
